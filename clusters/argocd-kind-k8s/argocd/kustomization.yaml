@@ -1,0 +1,21 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: argocd
+
+resources:
+# - namespace.yaml # Comment for flux based
+- https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml?ref=v2.7.6
+- projects/app-deploy.yaml
+# - secrets/git-github-key.yaml # Comment for flux based
+# - secrets/helm-github-key.yaml # Comment for flux based
+# - applications/ns1/podinfo-ns1.yaml
+# - applications/ns2/podinfo-ns2.yaml
+# - applicationsets/podinfo-matrix.yaml
+# - applicationsets/podinfo-list.yaml
+
+configMapGenerator:
+- name: argocd-cmd-params-cm
+  behavior: merge
+  literals:
+  - server.insecure=false
