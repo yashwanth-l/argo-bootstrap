@@ -2,21 +2,21 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: podinfo-ns2
+  name: podinfo-ns1
   namespace: argocd
 spec:
   # For which project we are creating this app
   project: app-deploy
   source:
     # Path where the specific environment of the app exists
-    path: deploy-kustomize/argocd-kind-k8s/ns2/podinfo
+    path: deploy-kustomize/argo-kind-k8s/ns1/podinfo
     # Repo where the gitops repo exist
-    repoURL: https://gitlab.nortal.com/ylakkaraju/gitops/argocd-deploy-feeder.git
+    repoURL: https://github.com/yashwanth-l/argo-deploy-feeder.git
     # Branch of the Repo to use to sync
     targetRevision: main
   destination:
     # Namespace where to deploy the application
-    namespace: ns2
+    namespace: ns1
     # The kubernetes cluster where Argo is installed
     server: https://kubernetes.default.svc
   syncPolicy:
@@ -36,3 +36,4 @@ spec:
     #     duration: 5s # the amount to back off. Default unit is seconds, but could also be a duration (e.g. "2m", "1h")
     #     factor: 2 # a factor to multiply the base duration after each failed retry
     #     maxDuration: 3m # the maximum amount of time allowed for the backoff strategy
+
