@@ -4,11 +4,8 @@ kind: Kustomization
 namespace: argocd
 
 resources:
-# - namespace.yaml # Comment for flux based
-- https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml?ref=v2.7.6
+- https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml?ref=v2.7.7
 - projects/app-deploy.yaml
-# - secrets/git-github-key.yaml # Comment for flux based
-# - secrets/helm-github-key.yaml # Comment for flux based
 # - applications/ns1/podinfo-ns1.yaml
 # - applications/ns2/podinfo-ns2.yaml
 # - applicationsets/podinfo-matrix.yaml
