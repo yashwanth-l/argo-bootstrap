@@ -4,7 +4,7 @@ kind: Kustomization
 namespace: argocd
 
 resources:
-- https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml?ref=v2.7.7
+- https://raw.githubusercontent.com/argoproj/argo-cd/v2.7.7/manifests/install.yaml
 - projects/app-deploy.yaml
 # - applications/ns1/podinfo-ns1.yaml
 # - applications/ns2/podinfo-ns2.yaml

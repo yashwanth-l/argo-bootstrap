@@ -4,4 +4,4 @@ kind: Kustomization
 namespace: argo-rollouts
 
 resources:
-- https://raw.githubusercontent.com/argoproj/argo-rollouts/stable/manifests/install.yaml?ref=v1.5.1
+- https://raw.githubusercontent.com/argoproj/argo-rollouts/v1.5.1/manifests/install.yaml
